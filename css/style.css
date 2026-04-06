@@ -133,6 +133,12 @@ body {
     align-self: stretch;
 }
 
+.bg-about {
+    background-image: url(../img/BG-About.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .form {
     justify-content: center;
     display: flex;
@@ -313,13 +319,17 @@ body {
     opacity: 0.8;
 }
 
-.catalog {
+.catalog, .about {
     background-image: url(../img/BG-W.svg);
     padding: 80px 135px;
     background-color: #f5f5f5;
     max-width: 1500px;
     margin: 0 auto;
     width: 100%;
+}
+
+.about {
+    padding: 80px 0px 80px 135px;
 }
 
 .title {
@@ -436,8 +446,100 @@ body {
     background-position: center;
 }
 
+.btn-back {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+    color: #000;
+    font-weight: 500;
+}
+
+.contain {
+    display: flex;
+    gap: 50px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-obj.big {
+    width: 500px;
+    height: 500px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+}
+
 #img1 {
     background-image: url("../img/H-1.jpg");
+}
+
+#img1b {
+    background-image: url("../img/H-1b.jpg");
+}
+
+.info-obj {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.status-obj {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: 600;
+    padding: 10px 0;
+    border-bottom: 2px solid #28a745;
+    display: inline-block;
+    width: fit-content;
+}
+
+.description-obj h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.description-obj p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.features li {
+    font-size: 14px;
+    color: #555;
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border-left: 3px solid #333;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    padding: 15px 0;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
 }
 
 .card-content {
@@ -482,6 +584,57 @@ body {
     border-color: black;
 }
 
+/* Стили для страницы "О нас" */
+.bg-about {
+    background-image: url(../img/BG-About.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.about .bg-about {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.about .block-1.theme.dark {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 50px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about .block-1.theme.dark p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    text-align: left;
+    margin: 0;
+}
+
+.about .block-1.theme.dark b {
+    font-weight: 700;
+    color: #fff;
+}
+
+.about .block-1.theme.dark .btns {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.about .block-1.theme.dark .btn-catalog {
+    margin-bottom: 0;
+    width: auto;
+    display: inline-block;
+}
+
 .footer {
     justify-content: center;
     background-color: #181818;
@@ -499,6 +652,10 @@ body {
 @media (max-width: 1360px) {
     .catalog {
         padding: 80px 50px;
+    }
+
+    .about {
+        padding: 80px 0px 80px 50px;
     }
 
     .catalog-content{
@@ -550,6 +707,31 @@ body {
     
     .title-form h1 {
         font-size: 28px;
+    }
+
+    .contain {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .image-obj.big {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+    
+    .description-obj h2 {
+        font-size: 24px;
+    }
+    
+    .price {
+        font-size: 24px;
+    }
+    
+    .btn-back {
+        font-size: 16px;
+        margin-bottom: 20px;
     }
     
     .input-form {
@@ -620,8 +802,12 @@ body {
         width: 150px;
     }
     
-    .catalog {
+    .catalog .about{
         padding: 60px 40px;
+    }
+
+    .about {
+        padding: 60px 0px 60px 40px;
     }
     
     .catalog-content {
@@ -671,6 +857,16 @@ body {
         padding: 8px 15px;
     }
     
+    .about .block-1.theme.dark {
+        padding: 35px;
+        max-width: 550px;
+        gap: 20px;
+    }
+    
+    .about .block-1.theme.dark p {
+        font-size: 16px;
+    }
+    
     .footer {
         padding: 30px 20px;
         font-size: 12px;
@@ -712,6 +908,36 @@ body {
     .btn-submit {
         font-size: 16px;
         padding: 12px 20px;
+    }
+
+    .contain {
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .description-obj h2 {
+        font-size: 20px;
+    }
+    
+    .description-obj p {
+        font-size: 14px;
+    }
+    
+    .features li {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .price {
+        font-size: 20px;
+    }
+    
+    .status-obj {
+        font-size: 16px;
+    }
+    
+    .btn-back {
+        font-size: 14px;
     }
     
     .input-form {
@@ -773,6 +999,10 @@ body {
     .catalog {
         padding: 30px 15px;
     }
+
+    .about {
+        padding: 30px 0px 30px 15px;
+    }
     
     .title {
         font-size: 24px;
@@ -821,6 +1051,22 @@ body {
     .card-btn {
         font-size: 14px;
         padding: 10px 15px;
+    }
+    
+    .about .block-1.theme.dark {
+        padding: 25px;
+        max-width: 100%;
+        gap: 15px;
+    }
+    
+    .about .block-1.theme.dark p {
+        font-size: 14px;
+    }
+    
+    .about .block-1.theme.dark .btn-catalog {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px;
     }
     
     .footer {
